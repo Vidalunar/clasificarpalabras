@@ -1,0 +1,2323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#18375e">
+
+<title>PR Educación | Determinantes, pronombres y adverbios</title>
+
+<!-- TAILWIND CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- TIPOGRAFÍA ORIGINAL -->
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+
+<style>
+
+/* ==============================
+   COLORES ORIGINALES
+============================== */
+
+:root {
+  --sky: #4fa0ff;
+  --teal: #2ce9df;
+  --text: #eef5fb;
+  --ink: #0f213a;
+
+  --det: #4ade80;
+  --pro: #79c3ff;
+  --adv: #ffba60;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  font-family: "Patrick Hand", sans-serif;
+  color: var(--text);
+
+  background:
+    radial-gradient(
+      1400px 760px at 3% -18%,
+      rgba(44,233,223,.43),
+      transparent 62%
+    ),
+    radial-gradient(
+      1300px 720px at -12% -10%,
+      rgba(79,160,255,.40),
+      transparent 64%
+    ),
+    linear-gradient(
+      180deg,
+      #142f4f 0%,
+      #18375e 32%,
+      #1f4374 66%,
+      #1c3b68 100%
+    );
+
+  background-attachment: fixed;
+}
+
+/* CONTENEDOR */
+
+.shell {
+  max-width: 1120px;
+  margin: auto;
+  padding: 20px;
+}
+
+.glass {
+  backdrop-filter: blur(14px);
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff2b,
+      #ffffff12
+    );
+
+  border: 1px solid #ffffff36;
+  box-shadow: 0 10px 30px #08152933;
+
+  border-radius: 26px;
+}
+
+.card {
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff28,
+      #ffffff14
+    );
+
+  border: 1px solid #ffffff26;
+  border-radius: 20px;
+}
+
+/* CABECERA */
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.seal {
+  width: 78px;
+  height: 78px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ffffffb0;
+  flex-shrink: 0;
+}
+
+.hero-title {
+  font-size: clamp(28px,4.5vw,50px);
+  font-weight: 900;
+  line-height: 1.1;
+
+  text-shadow:
+    0 8px 22px #09122566,
+    0 2px 0 #0e203955;
+}
+
+.subtitle {
+  font-size: 19px;
+  opacity: .85;
+}
+
+/* BOTONES */
+
+.btn {
+  font-family: inherit;
+  font-size: 21px;
+
+  padding: 11px 20px;
+  border-radius: 17px;
+
+  border: 1px solid #ffffff42;
+  color: white;
+
+  cursor: pointer;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff40,
+      #ffffff20
+    ),
+    linear-gradient(
+      135deg,
+      #2f4b6f,
+      var(--sky) 60%
+    );
+
+  box-shadow:
+    inset 0 1px 0 #ffffff80,
+    0 10px 22px #06112640;
+
+  transition: .2s;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.btn:disabled {
+  opacity: .4;
+  cursor: not-allowed;
+}
+
+.btn-amber {
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff50,
+      #ffffff22
+    ),
+    linear-gradient(
+      135deg,
+      #ffd479,
+      #ffc146 60%
+    );
+
+  color: #3a2500;
+}
+
+.btn-ghost {
+  background: #ffffff20;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ESTADO */
+
+.status {
+  padding: 18px;
+  margin-bottom: 20px;
+}
+
+.statusline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.chip {
+  background: #ffffff22;
+  border: 1px solid #ffffff33;
+  border-radius: 99px;
+
+  padding: 5px 13px;
+  font-size: 19px;
+}
+
+.progress-wrap {
+  height: 13px;
+  background: #ffffff20;
+  border-radius: 30px;
+  margin-top: 15px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #2ce9df,
+      #86d2ff,
+      #e9f2ff
+    );
+
+  border-radius: 30px;
+  transition: width .3s;
+}
+
+/* INICIO */
+
+.intro {
+  padding: 30px;
+  text-align: center;
+}
+
+.intro h2 {
+  font-size: 38px;
+}
+
+.intro p {
+  font-size: 23px;
+  margin: 15px auto;
+  max-width: 750px;
+}
+
+.legend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 13px;
+  margin: 25px 0;
+}
+
+.legend-item {
+  padding: 10px 16px;
+  border-radius: 13px;
+  background: #09234170;
+  border: 1px solid #ffffff35;
+
+  font-size: 21px;
+}
+
+/* ORACIONES */
+
+.sentence-panel {
+  padding: 25px;
+  text-align: center;
+}
+
+.sentence {
+  margin-top: 15px;
+
+  font-size: clamp(28px,4vw,43px);
+  line-height: 1.9;
+
+  background: #0b234a40;
+  border: 1px solid #ffffff26;
+
+  border-radius: 20px;
+  padding: 20px;
+
+  min-height: 125px;
+}
+
+/* PALABRAS ARRASTRABLES */
+
+.word {
+  display: inline;
+
+  font: inherit;
+  color: white;
+
+  cursor: grab;
+
+  background: #ffffff19;
+  border: 1px solid transparent;
+
+  padding: 3px 6px;
+  margin: 0 2px;
+
+  border-radius: 8px;
+
+  touch-action: none;
+  user-select: none;
+
+  transition:
+    background .2s,
+    color .2s;
+}
+
+.word:hover:not(:disabled) {
+  background: #ffffff36;
+}
+
+.word.selected {
+  outline: 3px solid #ffe28c;
+  background: #ffffff3e;
+}
+
+/* PALABRAS YA CLASIFICADAS */
+
+.word.done {
+  font-weight: 900;
+  cursor: default;
+  background: #061f33bb;
+}
+
+.word.done.det {
+  color: var(--det);
+}
+
+.word.done.pro {
+  color: var(--pro);
+}
+
+.word.done.adv {
+  color: var(--adv);
+}
+
+/* CUADROS DE CLASIFICACIÓN */
+
+.bins {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.bin {
+  min-height: 165px;
+
+  border: 2px dashed #ffffff70;
+  border-radius: 20px;
+
+  padding: 15px 8px;
+
+  background: #071a3652;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 10px;
+
+  cursor: pointer;
+  font-family: inherit;
+  color: white;
+
+  transition: .2s;
+}
+
+.bin.det {
+  border-color: #66d99eaa;
+}
+
+.bin.pro {
+  border-color: #88c9ffaa;
+}
+
+.bin.adv {
+  border-color: #ffc574aa;
+}
+
+.bin.hover {
+  background: #ffffff32;
+  transform: scale(1.025);
+  border-style: solid;
+}
+
+.bin-title {
+  font-weight: 900;
+  font-size: clamp(19px,2.6vw,29px);
+}
+
+.bin-words {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 7px;
+}
+
+.pill {
+  background: #07152d99;
+  border: 1px solid #ffffff35;
+  border-radius: 11px;
+
+  padding: 5px 10px;
+
+  font-weight: 900;
+  font-size: 22px;
+}
+
+.pill.det {
+  color: var(--det);
+}
+
+.pill.pro {
+  color: var(--pro);
+}
+
+.pill.adv {
+  color: var(--adv);
+}
+
+/* FEEDBACK */
+
+.feedback {
+  min-height: 55px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  text-align: center;
+  font-size: 24px;
+}
+
+/* PANTALLA ROJA */
+
+.redflash {
+  position: fixed;
+  inset: 0;
+
+  background: #fc253c9e;
+  z-index: 100;
+
+  pointer-events: none;
+
+  animation: flash .55s ease forwards;
+}
+
+@keyframes flash {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* PALABRA FLOTANTE AL ARRASTRAR */
+
+.dragghost {
+  position: fixed;
+  z-index: 200;
+
+  pointer-events: none;
+
+  transform: translate(-50%,-50%);
+
+  background: #e5f7ff;
+  color: #12304c;
+
+  font-size: 29px;
+  font-weight: 900;
+
+  padding: 7px 17px;
+  border-radius: 14px;
+
+  box-shadow: 0 10px 25px #0008;
+}
+
+/* RESULTADOS */
+
+.result {
+  padding: 30px;
+}
+
+.result h2 {
+  font-size: 40px;
+  text-align: center;
+}
+
+.grade {
+  font-size: 52px;
+  font-weight: 900;
+
+  background: #ffffff26;
+
+  padding: 6px 26px;
+  border-radius: 17px;
+
+  display: inline-block;
+}
+
+.summarygrid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+
+  gap: 12px;
+  margin: 25px 0;
+}
+
+.stat {
+  text-align: center;
+
+  background: #071f3f7a;
+  border: 1px solid #ffffff2b;
+
+  padding: 15px;
+  border-radius: 16px;
+
+  font-size: 20px;
+}
+
+.stat strong {
+  display: block;
+  font-size: 32px;
+}
+
+.review {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 12px;
+}
+
+.review-card {
+  background: #102d527c;
+
+  border: 1px solid #ffffff2c;
+  border-radius: 15px;
+
+  padding: 15px;
+  font-size: 19px;
+}
+
+.review-card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.ok {
+  color: #8af5b2;
+}
+
+.bad {
+  color: #ffb4bd;
+}
+
+/* CONFETI */
+
+#confetti {
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+  z-index: 90;
+}
+
+/* PIE */
+
+.footer {
+  text-align: center;
+  margin-top: 25px;
+
+  font-size: 20px;
+  font-style: italic;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:650px) {
+
+  .shell {
+    padding: 12px;
+  }
+
+  .seal {
+    width: 58px;
+    height: 58px;
+  }
+
+  .header {
+    gap: 10px;
+  }
+
+  .sentence-panel {
+    padding: 15px 8px;
+  }
+
+  .sentence {
+    padding: 12px 8px;
+  }
+
+  .bins {
+    gap: 6px;
+  }
+
+  .bin {
+    padding: 10px 3px;
+    min-height: 145px;
+  }
+
+  .bin-title {
+    font-size: 18px;
+  }
+
+  .pill {
+    font-size: 17px;
+    padding: 3px 5px;
+  }
+
+  .review {
+    grid-template-columns: 1fr;
+  }
+
+  .stat {
+    font-size: 16px;
+    padding: 10px 4px;
+  }
+
+  .stat strong {
+    font-size: 25px;
+  }
+
+  .btn {
+    font-size: 19px;
+    padding: 10px 13px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="redLayer"></div>
+
+<canvas id="confetti"></canvas>
+
+<div class="shell">
+
+<!-- CABECERA -->
+
+<header class="header">
+
+  <img
+    src="pr-sello.png"
+    class="seal"
+    alt="Patricia Romero Educación"
+  >
+
+  <div style="flex:1">
+
+    <h1 class="hero-title">
+      Determinantes, pronombres y adverbios
+    </h1>
+
+    <p class="subtitle">
+      PR Educación · 21 palabras · Nota automática
+    </p>
+
+  </div>
+
+  <button
+    id="muteBtn"
+    class="btn btn-ghost"
+    title="Activar o desactivar sonido"
+  >
+    🔊
+  </button>
+
+</header>
+
+<main class="glass" style="padding:20px">
+
+<!-- BARRA DE ESTADO -->
+
+<section class="card status">
+
+  <div class="statusline">
+
+    <span class="chip">
+      Oración
+      <b id="round">—</b> / 7
+    </span>
+
+    <span class="chip">
+      Palabras
+      <b id="done">0</b> / 21
+    </span>
+
+    <span class="chip">
+      ⭐ Puntos:
+      <b id="points">0</b> / 21
+    </span>
+
+    <span class="chip">
+      ✅ <b id="correct">0</b>
+    </span>
+
+    <span class="chip">
+      ❌ <b id="errors">0</b>
+    </span>
+
+  </div>
+
+  <div class="progress-wrap">
+    <div id="progress" class="progress-bar"></div>
+  </div>
+
+</section>
+
+<!-- PANTALLA INICIAL -->
+
+<section id="intro" class="card intro">
+
+  <h2>¡Aprende a clasificar palabras! 🌟</h2>
+
+  <p>
+    Arrastra las palabras destacadas de cada oración
+    hasta el cuadro correspondiente.
+  </p>
+
+  <p>
+    También puedes pulsar una palabra y después
+    seleccionar su categoría.
+  </p>
+
+  <div class="legend">
+
+    <span class="legend-item" style="color:var(--det)">
+      🟢 Determinantes
+    </span>
+
+    <span class="legend-item" style="color:var(--pro)">
+      🔵 Pronombres
+    </span>
+
+    <span class="legend-item" style="color:var(--adv)">
+      🟠 Adverbios
+    </span>
+
+  </div>
+
+  <p>
+    Cada partida tiene <b>21 palabras</b>:
+    7 determinantes, 7 pronombres y 7 adverbios.
+  </p>
+
+  <p style="font-size:19px;opacity:.85">
+    Acierto a la primera: 1 punto.<br>
+    Acierto después de un error: 0,5 puntos.
+  </p>
+
+  <button id="start" class="btn btn-amber">
+    Comenzar ▶
+  </button>
+
+</section>
+
+<!-- JUEGO -->
+
+<section id="game" class="hidden">
+
+  <div class="card sentence-panel">
+
+    <p style="font-size:21px">
+      Lee la oración y clasifica las
+      <b>tres palabras destacadas</b>.
+    </p>
+
+    <div id="sentence" class="sentence"></div>
+
+    <!-- CUADROS -->
+
+    <div class="bins">
+
+      <button class="bin det" data-cat="det">
+
+        <span class="bin-title">
+          🟢 Determinantes
+        </span>
+
+        <span style="font-size:16px">
+          Acompañan al sustantivo
+        </span>
+
+        <span id="bin-det" class="bin-words"></span>
+
+      </button>
+
+      <button class="bin pro" data-cat="pro">
+
+        <span class="bin-title">
+          🔵 Pronombres
+        </span>
+
+        <span style="font-size:16px">
+          Funcionan como núcleo de un grupo nominal
+        </span>
+
+        <span id="bin-pro" class="bin-words"></span>
+
+      </button>
+
+      <button class="bin adv" data-cat="adv">
+
+        <span class="bin-title">
+          🟠 Adverbios
+        </span>
+
+        <span style="font-size:16px">
+          Expresan circunstancias o modifican otras palabras
+        </span>
+
+        <span id="bin-adv" class="bin-words"></span>
+
+      </button>
+
+    </div>
+
+    <div id="feedback" class="feedback"></div>
+
+    <div style="margin-top:15px">
+
+      <button
+        id="next"
+        class="btn btn-amber"
+        disabled
+      >
+        Siguiente oración ➜
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- RESULTADOS -->
+
+<section id="results" class="card result hidden">
+
+  <div style="text-align:center">
+
+    <h2>¡Partida finalizada! 🌟</h2>
+
+    <p style="font-size:24px">
+      Tu calificación estimada es:
+    </p>
+
+    <div id="finalGrade" class="grade"></div>
+
+    <p id="finalMessage" style="font-size:25px;margin:20px"></p>
+
+  </div>
+
+  <div class="summarygrid">
+
+    <div class="stat">
+      <strong id="finalScore">0</strong>
+      Puntos
+    </div>
+
+    <div class="stat">
+      <strong id="finalFirst">0</strong>
+      A la primera
+    </div>
+
+    <div class="stat">
+      <strong id="finalErrors">0</strong>
+      Errores
+    </div>
+
+  </div>
+
+  <h2 style="font-size:30px">
+    📊 Revisión de tus respuestas
+  </h2>
+
+  <div id="review" class="review"></div>
+
+  <div style="text-align:center;margin-top:25px">
+
+    <button id="again" class="btn btn-amber">
+      Jugar otra vez 🔄
+    </button>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer class="footer">
+  Creado por Patricia Romero
+</footer>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   BANCO DE ORACIONES
+
+   Cada oración contiene:
+   - Una palabra determinante.
+   - Una palabra pronombre.
+   - Una palabra adverbio.
+
+   D = determinante
+   P = pronombre
+   A = adverbio
+
+   Las palabras entre corchetes se pueden clasificar.
+
+   Ejemplo:
+
+   [Mis|D] abuelos viven [aquí|A] [conmigo|P].
+===================================================== */
+
+const ORACIONES = [
+
+"[Mis|D] abuelos viven [aquí|A] [conmigo|P].",
+
+"[Esta|D] mañana [nosotros|P] llegamos [temprano|A].",
+
+"[Ese|D] planeta brilla y [aquel|P] aparece [allí|A].",
+
+"[Tu|D] hermano [me|P] llamó [ayer|A].",
+
+"[Nuestra|D] profesora [nos|P] explicó [bien|A] la lección.",
+
+"[Aquella|D] montaña es alta, pero [esta|P] parece [más|A] elevada.",
+
+"[Mi|D] primo [te|P] espera [fuera|A].",
+
+"[Sus|D] amigos [le|P] escribieron [hoy|A].",
+
+"[Este|D] cuchillo [lo|P] guardaremos [aquí|A].",
+
+"[Vuestro|D] equipo [nos|P] ganó [ayer|A].",
+
+"[Aquel|D] pueblo [me|P] gustó [muchísimo|A].",
+
+"[Tu|D] colección [la|P] veremos [mañana|A].",
+
+"[Mi|D] reloj [lo|P] encontré [dentro|A].",
+
+"[Estas|D] zapatillas [me|P] quedan [bien|A].",
+
+"[Su|D] casa [nos|P] queda [cerca|A].",
+
+"[Nuestros|D] vecinos [se|P] levantan [pronto|A].",
+
+"[Esa|D] respuesta [yo|P] la conocía [antes|A].",
+
+"[Cada|D] estudiante [se|P] sienta [aquí|A].",
+
+"[Cinco|D] alumnos [nos|P] esperaban [afuera|A].",
+
+"[Mi|D] madre [me|P] escucha [siempre|A].",
+
+"[Aquellos|D] libros [los|P] colocamos [arriba|A].",
+
+"[Un|D] pájaro [nos|P] sorprendió [hoy|A].",
+
+"[Este|D] ejercicio [te|P] saldrá [fácilmente|A].",
+
+"[Varias|D] personas [me|P] hablaron [después|A].",
+
+"[Tus|D] amigos [se|P] fueron [rápidamente|A].",
+
+"[Mi|D] mochila [la|P] dejé [allí|A].",
+
+"[Esa|D] película [me|P] gustó [bastante|A].",
+
+"[Unos|D] compañeros [nos|P] ayudaron [mucho|A].",
+
+"[Aquella|D] ciudad [la|P] visitamos [anteayer|A].",
+
+"[Tres|D] niños [se|P] escondieron [detrás|A].",
+
+"[Nuestra|D] gata [nos|P] sigue [siempre|A].",
+
+"[Este|D] regalo [te|P] llegará [mañana|A].",
+
+"[Varios|D] corredores [se|P] entrenan [diariamente|A].",
+
+"[Su|D] respuesta [me|P] pareció [muy|A] adecuada.",
+
+"[La|D] directora [nos|P] saludó [amablemente|A].",
+
+"[Aquel|D] día [yo|P] llegué [tarde|A].",
+
+"[Mis|D] hermanas [me|P] llaman [frecuentemente|A].",
+
+"[Dos|D] turistas [nos|P] preguntaron [educadamente|A].",
+
+"[Esta|D] postal [me|P] gusta [muchísimo|A].",
+
+"[Su|D] hermano [te|P] buscará [luego|A].",
+
+"[Cualquier|D] alumno [lo|P] entiende [perfectamente|A].",
+
+"[El|D] río [nos|P] sorprendió [mucho|A].",
+
+"[Aquellas|D] chicas [se|P] marcharon [pronto|A].",
+
+"[Mi|D] hermano [lo|P] explicó [claramente|A].",
+
+"[Una|D] amiga [me|P] visitó [ayer|A].",
+
+"[Estos|D] libros [te|P] servirán [mucho|A].",
+
+"[Su|D] mascota [nos|P] recibió [alegremente|A].",
+
+"[Cuatro|D] deportistas [se|P] prepararon [cuidadosamente|A].",
+
+"[Esa|D] niña [me|P] contestó [educadamente|A].",
+
+"[Nuestros|D] compañeros [nos|P] acompañarán [mañana|A]."
+
+];
+
+
+/* =====================================================
+   CONVERSIÓN DE ORACIONES
+===================================================== */
+
+const CATEGORY = {
+  D: "det",
+  P: "pro",
+  A: "adv"
+};
+
+const LABEL = {
+  det: "Determinante",
+  pro: "Pronombre",
+  adv: "Adverbio"
+};
+
+function parseSentence(text) {
+
+  const regex = /\[([^\]|]+)\|([DPA])\]/g;
+
+  let parts = [];
+  let last = 0;
+  let match;
+
+  while ((match = regex.exec(text)) !== null) {
+
+    if (match.index > last) {
+
+      parts.push({
+        text: text.slice(last, match.index),
+        cat: null
+      });
+
+    }
+
+    parts.push({
+      text: match[1],
+      cat: CATEGORY[match[2]]
+    });
+
+    last = regex.lastIndex;
+  }
+
+  if (last < text.length) {
+
+    parts.push({
+      text: text.slice(last),
+      cat: null
+    });
+
+  }
+
+  return parts;
+}
+
+const BANK = ORACIONES.map(parseSentence);
+
+
+/* =====================================================
+   BAREMO ORIGINAL DE CALIFICACIONES
+===================================================== */
+
+const gradeTable = [
+
+  {min:20.4,max:21.0,grade:"1"},
+  {min:19.3,max:20.3,grade:"1-"},
+  {min:18.3,max:19.2,grade:"2+"},
+  {min:17.4,max:18.2,grade:"2"},
+  {min:16.2,max:17.3,grade:"2-"},
+  {min:15.5,max:16.1,grade:"3+"},
+  {min:14.5,max:15.4,grade:"3"},
+  {min:13.4,max:14.4,grade:"3-"},
+  {min:12.6,max:13.3,grade:"4+"},
+  {min:11.6,max:12.5,grade:"4"},
+  {min:10.5,max:11.5,grade:"4-"},
+  {min:9.5,max:10.4,grade:"5+"},
+  {min:6.3,max:9.4,grade:"5"},
+  {min:5.3,max:6.2,grade:"5-"},
+  {min:0.0,max:5.2,grade:"6"}
+
+];
+
+function computeGrade(score) {
+
+  const rounded = Math.round(score * 10) / 10;
+
+  const row = gradeTable.find(
+    r => rounded >= r.min && rounded <= r.max
+  );
+
+  return row ? row.grade : "6";
+}
+
+
+/* =====================================================
+   FUNCIONES GENERALES
+===================================================== */
+
+const $ = selector => document.querySelector(selector);
+
+function shuffle(array) {
+
+  const result = [...array];
+
+  for (let i = result.length - 1; i > 0; i--) {
+
+    const j = Math.floor(Math.random() * (i + 1));
+
+    [result[i],result[j]] = [result[j],result[i]];
+
+  }
+
+  return result;
+}
+
+
+/* =====================================================
+   ESTADO DEL JUEGO
+===================================================== */
+
+let game = {
+
+  deck: [],
+  round: 0,
+
+  done: 0,
+  score: 0,
+
+  first: 0,
+  errors: 0,
+
+  selected: null,
+
+  history: [],
+
+  muted: false,
+
+  drag: null,
+
+  transitioning: false
+
+};
+
+
+/* =====================================================
+   SONIDOS
+===================================================== */
+
+let audioCtx = null;
+
+function enableAudio() {
+
+  try {
+
+    const AC =
+      window.AudioContext ||
+      window.webkitAudioContext;
+
+    if (!audioCtx && AC) {
+      audioCtx = new AC();
+    }
+
+    if (
+      audioCtx &&
+      audioCtx.state === "suspended"
+    ) {
+      audioCtx.resume();
+    }
+
+  } catch(e) {
+    console.warn("Audio no disponible",e);
+  }
+
+}
+
+function tone(
+  frequency,
+  delay = 0,
+  type = "sine",
+  duration = .15,
+  volume = .08
+) {
+
+  if (game.muted || !audioCtx) return;
+
+  const oscillator = audioCtx.createOscillator();
+  const gain = audioCtx.createGain();
+
+  const now = audioCtx.currentTime + delay;
+
+  oscillator.type = type;
+  oscillator.frequency.value = frequency;
+
+  oscillator.connect(gain);
+  gain.connect(audioCtx.destination);
+
+  gain.gain.setValueAtTime(.0001,now);
+
+  gain.gain.exponentialRampToValueAtTime(
+    volume,
+    now + .015
+  );
+
+  gain.gain.exponentialRampToValueAtTime(
+    .0001,
+    now + duration
+  );
+
+  oscillator.start(now);
+  oscillator.stop(now + duration + .02);
+
+}
+
+function soundSuccess() {
+
+  tone(880,0,"sine",.14);
+  tone(1046,.07,"sine",.18);
+
+}
+
+function soundError() {
+
+  tone(220,0,"sawtooth",.27,.07);
+  tone(196,.12,"sawtooth",.31,.06);
+
+}
+
+function soundStart() {
+
+  tone(523,0);
+  tone(659,.06);
+  tone(784,.12);
+
+}
+
+
+/* =====================================================
+   ICONOS DE ACIERTO Y ERROR
+===================================================== */
+
+function iconSVG(correct) {
+
+  const color = correct ? "#4ade80" : "#fb7185";
+
+  const path = correct
+    ? "M50 83 L73 106 L115 60"
+    : "M55 55 L105 105 M105 55 L55 105";
+
+  return `
+  <svg
+    width="48"
+    height="48"
+    viewBox="0 0 160 160"
+    aria-hidden="true"
+  >
+
+    <circle
+      cx="80"
+      cy="80"
+      r="70"
+      fill="${color}"
+      stroke="#ffffffaa"
+      stroke-width="4"
+    />
+
+    <path
+      d="${path}"
+      stroke="white"
+      stroke-width="12"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+  </svg>
+  `;
+
+}
+
+
+/* =====================================================
+   CONFETI DE ESTRELLAS
+===================================================== */
+
+const canvas = $("#confetti");
+const ctx = canvas.getContext("2d");
+
+let particles = [];
+let animating = false;
+
+function resizeCanvas() {
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+}
+
+window.addEventListener("resize",resizeCanvas);
+
+resizeCanvas();
+
+function confettiBurst() {
+
+  const colors = [
+    "#2ce9df",
+    "#4fa0ff",
+    "#ffd479",
+    "#ffffff",
+    "#4ade80"
+  ];
+
+  for (let i = 0; i < 45; i++) {
+
+    particles.push({
+
+      x: window.innerWidth / 2,
+      y: window.innerHeight / 3,
+
+      vx: (Math.random()-.5)*13,
+      vy: (Math.random()-.5)*13-3,
+
+      size: Math.random()*13+9,
+
+      color: colors[
+        Math.floor(Math.random()*colors.length)
+      ],
+
+      alpha: 1
+
+    });
+
+  }
+
+  if (!animating) {
+
+    animating = true;
+    requestAnimationFrame(animateParticles);
+
+  }
+
+}
+
+function animateParticles() {
+
+  ctx.clearRect(
+    0,
+    0,
+    canvas.width,
+    canvas.height
+  );
+
+  particles.forEach(p => {
+
+    p.x += p.vx;
+    p.y += p.vy;
+
+    p.vy += .15;
+    p.alpha -= .018;
+
+    ctx.globalAlpha = Math.max(0,p.alpha);
+
+    ctx.fillStyle = p.color;
+    ctx.font = `${p.size}px Arial`;
+
+    ctx.fillText("★",p.x,p.y);
+
+  });
+
+  particles = particles.filter(p => p.alpha > 0);
+
+  ctx.globalAlpha = 1;
+
+  if (particles.length) {
+
+    requestAnimationFrame(animateParticles);
+
+  } else {
+
+    animating = false;
+
+  }
+
+}
+
+
+/* =====================================================
+   INICIAR PARTIDA
+===================================================== */
+
+function startGame() {
+
+  enableAudio();
+  soundStart();
+
+  game.deck = shuffle(BANK)
+    .slice(0,7)
+    .map(parts => ({
+
+      parts: parts,
+
+      items: parts.map((p,i) => {
+
+        if (!p.cat) return null;
+
+        return {
+
+          id: i,
+          text: p.text,
+          cat: p.cat,
+
+          done: false,
+
+          tries: 0,
+
+          wrong: []
+
+        };
+
+      }).filter(Boolean)
+
+    }));
+
+  game.round = 0;
+  game.done = 0;
+
+  game.score = 0;
+  game.first = 0;
+  game.errors = 0;
+
+  game.selected = null;
+  game.history = [];
+
+  game.transitioning = false;
+
+  $("#intro").classList.add("hidden");
+  $("#results").classList.add("hidden");
+
+  $("#game").classList.remove("hidden");
+
+  renderRound();
+
+}
+
+
+/* =====================================================
+   ORACIÓN ACTUAL
+===================================================== */
+
+function currentRound() {
+
+  return game.deck[game.round];
+
+}
+
+
+/* =====================================================
+   DIBUJAR ORACIÓN
+===================================================== */
+
+function renderRound() {
+
+  game.selected = null;
+  game.drag = null;
+  game.transitioning = false;
+
+  const round = currentRound();
+
+  const sentence = $("#sentence");
+
+  sentence.replaceChildren();
+
+  round.parts.forEach((part,index) => {
+
+    if (part.cat) {
+
+      const button = document.createElement("button");
+
+      button.type = "button";
+
+      button.className = "word";
+      button.textContent = part.text;
+
+      button.dataset.id = index;
+
+      button.setAttribute(
+        "aria-label",
+        `Clasificar la palabra ${part.text}`
+      );
+
+      sentence.appendChild(button);
+
+    } else {
+
+      const span = document.createElement("span");
+
+      span.textContent = part.text;
+
+      sentence.appendChild(span);
+
+    }
+
+  });
+
+  ["det","pro","adv"].forEach(cat => {
+
+    $("#bin-" + cat).replaceChildren();
+
+  });
+
+  $("#feedback").replaceChildren();
+
+  $("#next").disabled = true;
+
+  $("#next").textContent =
+    game.round === 6
+      ? "Ver resultados ➜"
+      : "Siguiente oración ➜";
+
+  updateHUD();
+
+}
+
+
+/* =====================================================
+   ACTUALIZAR PUNTUACIÓN
+===================================================== */
+
+function updateHUD() {
+
+  $("#round").textContent = game.round + 1;
+
+  $("#done").textContent = game.done;
+
+  $("#points").textContent =
+    Number(game.score.toFixed(1));
+
+  $("#correct").textContent = game.done;
+
+  $("#errors").textContent = game.errors;
+
+  $("#progress").style.width =
+    `${game.done / 21 * 100}%`;
+
+}
+
+
+/* =====================================================
+   SELECCIONAR PALABRA
+===================================================== */
+
+function selectWord(id) {
+
+  if (game.transitioning) return;
+
+  const item = currentRound().items.find(
+    x => x.id === id
+  );
+
+  if (!item || item.done) return;
+
+  game.selected = id;
+
+  document.querySelectorAll(".word").forEach(el => {
+
+    el.classList.toggle(
+      "selected",
+      Number(el.dataset.id) === id
+    );
+
+  });
+
+}
+
+
+/* =====================================================
+   CLASIFICAR PALABRA
+===================================================== */
+
+function classify(id,category) {
+
+  if (game.transitioning) return;
+
+  const item = currentRound().items.find(
+    x => x.id === id
+  );
+
+  if (!item || item.done) return;
+
+  enableAudio();
+
+  item.tries++;
+
+  // RESPUESTA CORRECTA
+
+  if (item.cat === category) {
+
+    item.done = true;
+
+    const value = item.tries === 1 ? 1 : .5;
+
+    game.score += value;
+    game.done++;
+
+    if (item.tries === 1) {
+      game.first++;
+    }
+
+    soundSuccess();
+    confettiBurst();
+
+    // COLOREAR PALABRA ORIGINAL
+
+    const word = document.querySelector(
+      `.word[data-id="${id}"]`
+    );
+
+    if (word) {
+
+      word.classList.remove("selected");
+
+      word.classList.add(
+        "done",
+        item.cat
+      );
+
+      word.disabled = true;
+
+    }
+
+    // AÑADIR PALABRA AL CUADRO
+
+    const pill = document.createElement("span");
+
+    pill.className = `pill ${item.cat}`;
+    pill.textContent = item.text;
+
+    $("#bin-" + item.cat).appendChild(pill);
+
+    game.history.push({
+
+      word: item.text,
+      cat: item.cat,
+
+      correct: true,
+
+      first: item.tries === 1,
+
+      attempts: item.tries,
+
+      errors: [...item.wrong]
+
+    });
+
+    showFeedback(
+      true,
+      item.tries === 1
+        ? "¡Excelente! +1 punto ⭐"
+        : "¡Muy bien! +0,5 puntos ⭐"
+    );
+
+    game.selected = null;
+
+    updateHUD();
+
+    // ¿ESTÁ COMPLETA LA ORACIÓN?
+
+    const complete = currentRound().items.every(
+      x => x.done
+    );
+
+    if (complete) {
+
+      game.transitioning = true;
+
+      $("#next").disabled = false;
+
+      showFeedback(
+        true,
+        "¡Oración completada! 🌟"
+      );
+
+    }
+
+  }
+
+  // RESPUESTA INCORRECTA
+
+  else {
+
+    game.errors++;
+
+    item.wrong.push(category);
+
+    soundError();
+
+    redFlash();
+
+    showFeedback(
+      false,
+      "Inténtalo de nuevo. Fíjate en la función de la palabra."
+    );
+
+    updateHUD();
+
+  }
+
+}
+
+
+/* =====================================================
+   MOSTRAR FEEDBACK
+===================================================== */
+
+function showFeedback(correct,message) {
+
+  const box = $("#feedback");
+
+  box.replaceChildren();
+
+  const icon = document.createElement("span");
+
+  icon.innerHTML = iconSVG(correct);
+
+  const text = document.createElement("span");
+
+  text.textContent = message;
+
+  box.appendChild(icon);
+  box.appendChild(text);
+
+}
+
+
+/* =====================================================
+   PANTALLA ROJA DE ERROR
+===================================================== */
+
+function redFlash() {
+
+  const layer = $("#redLayer");
+
+  layer.className = "";
+
+  void layer.offsetWidth;
+
+  layer.className = "redflash";
+
+  setTimeout(() => {
+
+    layer.className = "";
+
+  },550);
+
+}
+
+
+/* =====================================================
+   ARRASTRAR Y SOLTAR
+   COMPATIBLE CON RATÓN Y PANTALLAS TÁCTILES
+===================================================== */
+
+let pointer = null;
+
+function clearHover() {
+
+  document.querySelectorAll(".bin").forEach(
+    bin => bin.classList.remove("hover")
+  );
+
+}
+
+function removeGhost() {
+
+  if (pointer && pointer.ghost) {
+
+    pointer.ghost.remove();
+
+  }
+
+  pointer = null;
+  clearHover();
+
+}
+
+$("#sentence").addEventListener(
+  "pointerdown",
+  e => {
+
+    const word = e.target.closest(".word");
+
+    if (!word || word.disabled) return;
+
+    if (game.transitioning) return;
+
+    const id = Number(word.dataset.id);
+
+    selectWord(id);
+
+    pointer = {
+
+      id: id,
+
+      startX: e.clientX,
+      startY: e.clientY,
+
+      x: e.clientX,
+      y: e.clientY,
+
+      moved: false,
+
+      ghost: null
+
+    };
+
+    if (word.setPointerCapture) {
+
+      try {
+        word.setPointerCapture(e.pointerId);
+      } catch(error) {}
+
+    }
+
+  }
+);
+
+document.addEventListener(
+  "pointermove",
+  e => {
+
+    if (!pointer) return;
+
+    pointer.x = e.clientX;
+    pointer.y = e.clientY;
+
+    const distance = Math.hypot(
+      e.clientX - pointer.startX,
+      e.clientY - pointer.startY
+    );
+
+    if (distance > 8 && !pointer.moved) {
+
+      pointer.moved = true;
+
+      const item = currentRound().items.find(
+        x => x.id === pointer.id
+      );
+
+      if (!item) return;
+
+      const ghost = document.createElement("div");
+
+      ghost.className = "dragghost";
+
+      ghost.textContent = item.text;
+
+      document.body.appendChild(ghost);
+
+      pointer.ghost = ghost;
+
+    }
+
+    if (!pointer.moved) return;
+
+    if (pointer.ghost) {
+
+      pointer.ghost.style.left = e.clientX + "px";
+      pointer.ghost.style.top = e.clientY + "px";
+
+    }
+
+    clearHover();
+
+    const target = document.elementFromPoint(
+      e.clientX,
+      e.clientY
+    );
+
+    const bin = target && target.closest(".bin");
+
+    if (bin) {
+      bin.classList.add("hover");
+    }
+
+  }
+);
+
+document.addEventListener(
+  "pointerup",
+  e => {
+
+    if (!pointer) return;
+
+    const id = pointer.id;
+
+    if (pointer.moved) {
+
+      const target = document.elementFromPoint(
+        e.clientX,
+        e.clientY
+      );
+
+      const bin = target && target.closest(".bin");
+
+      if (bin) {
+
+        classify(
+          id,
+          bin.dataset.cat
+        );
+
+      }
+
+    }
+
+    removeGhost();
+
+  }
+);
+
+document.addEventListener(
+  "pointercancel",
+  removeGhost
+);
+
+
+/* =====================================================
+   SELECCIÓN MEDIANTE CLIC
+===================================================== */
+
+$("#sentence").addEventListener(
+  "click",
+  e => {
+
+    const word = e.target.closest(".word");
+
+    if (!word || word.disabled) return;
+
+    selectWord(Number(word.dataset.id));
+
+  }
+);
+
+
+/* =====================================================
+   CLIC EN LOS CUADROS
+===================================================== */
+
+document.querySelectorAll(".bin").forEach(bin => {
+
+  bin.addEventListener("click",() => {
+
+    if (game.selected === null) return;
+
+    classify(
+      game.selected,
+      bin.dataset.cat
+    );
+
+  });
+
+});
+
+
+/* =====================================================
+   PASAR A LA SIGUIENTE ORACIÓN
+===================================================== */
+
+function nextRound() {
+
+  const complete = currentRound().items.every(
+    x => x.done
+  );
+
+  if (!complete) return;
+
+  if (game.round < 6) {
+
+    game.round++;
+
+    renderRound();
+
+  } else {
+
+    finishGame();
+
+  }
+
+}
+
+
+/* =====================================================
+   CALIFICACIÓN FINAL
+===================================================== */
+
+function motivationalMessage(score) {
+
+  if (score >= 19.3) {
+
+    return "¡Fantástico! Dominas muy bien las tres categorías gramaticales. Sigue así. 🌟";
+
+  }
+
+  if (score >= 17.4) {
+
+    return "¡Excelente trabajo! Has demostrado un gran conocimiento. Revisa los pequeños errores para alcanzar la perfección. 👏";
+
+  }
+
+  if (score >= 14.5) {
+
+    return "¡Buen trabajo! Vas por muy buen camino. Repasa las palabras que te han resultado más difíciles. 💪";
+
+  }
+
+  if (score >= 11.6) {
+
+    return "¡Estás progresando! Comprueba cuándo una palabra acompaña a un sustantivo y cuándo funciona como pronombre. 📚";
+
+  }
+
+  if (score >= 9.5) {
+
+    return "Tienes algunos conceptos claros, pero necesitas seguir practicando. Revisa tus errores con calma. 🌱";
+
+  }
+
+  return "¡No te rindas! Cada error es una oportunidad para aprender. Repasa las categorías y vuelve a intentarlo. ❤️";
+
+}
+
+
+/* =====================================================
+   PANTALLA FINAL
+===================================================== */
+
+function finishGame() {
+
+  $("#game").classList.add("hidden");
+
+  $("#results").classList.remove("hidden");
+
+  $("#finalGrade").textContent =
+    computeGrade(game.score);
+
+  $("#finalScore").textContent =
+    game.score.toFixed(1);
+
+  $("#finalFirst").textContent =
+    game.first;
+
+  $("#finalErrors").textContent =
+    game.errors;
+
+  $("#finalMessage").textContent =
+    motivationalMessage(game.score);
+
+  renderReview();
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+}
+
+
+/* =====================================================
+   INFORME DE ACIERTOS Y ERRORES
+===================================================== */
+
+function renderReview() {
+
+  const container = $("#review");
+
+  container.replaceChildren();
+
+  const categories = [
+    "det",
+    "pro",
+    "adv"
+  ];
+
+  // RESUMEN POR CATEGORÍA
+
+  categories.forEach(cat => {
+
+    const answers = game.history.filter(
+      x => x.cat === cat
+    );
+
+    const first = answers.filter(
+      x => x.first
+    ).length;
+
+    const withErrors = answers.length - first;
+
+    const card = document.createElement("div");
+
+    card.className = "review-card";
+
+    const title = document.createElement("h3");
+
+    title.textContent = LABEL[cat];
+
+    title.style.color =
+      cat === "det" ? "#4ade80" :
+      cat === "pro" ? "#79c3ff" :
+      "#ffba60";
+
+    const summary = document.createElement("p");
+
+    summary.textContent =
+      `✅ A la primera: ${first} · ❌ Con errores: ${withErrors}`;
+
+    card.appendChild(title);
+    card.appendChild(summary);
+
+    // PALABRAS CLASIFICADAS
+
+    answers.forEach(item => {
+
+      const row = document.createElement("div");
+
+      row.style.marginTop = "9px";
+      row.style.paddingTop = "7px";
+
+      row.style.borderTop =
+        "1px solid #ffffff29";
+
+      const word = document.createElement("b");
+
+      word.textContent = item.word + " ";
+
+      const result = document.createElement("span");
+
+      if (item.first) {
+
+        result.className = "ok";
+        result.textContent = "✅ Correcto a la primera";
+
+      } else {
+
+        result.className = "bad";
+
+        const mistaken = [
+          ...new Set(item.errors)
+        ].map(x => LABEL[x]).join(", ");
+
+        result.textContent =
+          `❌ Confundido con: ${mistaken}. Después corregido.`;
+
+      }
+
+      row.appendChild(word);
+      row.appendChild(result);
+
+      card.appendChild(row);
+
+    });
+
+    container.appendChild(card);
+
+  });
+
+  // RECOMENDACIÓN PERSONALIZADA
+
+  const reviewCard = document.createElement("div");
+
+  reviewCard.className = "review-card";
+
+  const title = document.createElement("h3");
+
+  title.textContent = "📚 ¿Qué necesitas repasar?";
+
+  reviewCard.appendChild(title);
+
+  categories.forEach(cat => {
+
+    const answers = game.history.filter(
+      x => x.cat === cat
+    );
+
+    const errors = answers.filter(
+      x => !x.first
+    ).length;
+
+    if (errors > 0) {
+
+      const p = document.createElement("p");
+
+      p.style.marginBottom = "10px";
+
+      p.textContent =
+        `${LABEL[cat]}: ${errors} palabra(s) necesitaron corrección.`;
+
+      reviewCard.appendChild(p);
+
+    }
+
+  });
+
+  const allFirst = game.history.every(
+    x => x.first
+  );
+
+  if (allFirst) {
+
+    const p = document.createElement("p");
+
+    p.textContent =
+      "¡Enhorabuena! Has acertado todas las palabras a la primera.";
+
+    reviewCard.appendChild(p);
+
+  }
+
+  container.appendChild(reviewCard);
+
+}
+
+
+/* =====================================================
+   BOTONES
+===================================================== */
+
+$("#start").addEventListener(
+  "click",
+  startGame
+);
+
+$("#again").addEventListener(
+  "click",
+  startGame
+);
+
+$("#next").addEventListener(
+  "click",
+  nextRound
+);
+
+$("#muteBtn").addEventListener(
+  "click",
+  () => {
+
+    game.muted = !game.muted;
+
+    $("#muteBtn").textContent =
+      game.muted ? "🔇" : "🔊";
+
+    if (!game.muted) {
+      enableAudio();
+    }
+
+  }
+);
+
+
+/* =====================================================
+   FIN DEL CÓDIGO
+===================================================== */
+
+</script>
+
+</body>
+</html>
